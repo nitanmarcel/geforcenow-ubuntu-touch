@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Geforce Now
+Exec=qmlscene %U qml/Main.qml --scaling
+Icon=assets/logo.svg
+Terminal=false
+Type=Application
+X-Ubuntu-Touch=true
