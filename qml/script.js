@@ -2,12 +2,11 @@ Object.defineProperty(navigator, 'platform', { value: "iPhone" });
 Object.defineProperty(navigator, 'appCodeName', { value: "Mozila" });
 Object.defineProperty(navigator, 'webview', { value: "false" });
 Object.defineProperty(navigator, 'vendor', { value: "Apple Computer, Inc." });
-Object.defineProperty(navigator, 'userAgent', { value: "Mozilla/5.0 (iPhone; CPU iPhone OS 16_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.1 Mobile/15E148 Safari/604.1" });
 Object.defineProperty(navigator, 'standalone', { value: true });
 Object.defineProperty(navigator, 'onLine', { value: true });
-Object.defineProperty(navigator, 'maxTouchPoints', { value: 2 });
-Object.defineProperty(navigator, 'appName', { value: "iOS" });
-Object.defineProperty(navigator, 'appVersion', { value: "5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.63 Safari/537.36 UOS" });
+Object.defineProperty(navigator, 'maxTouchPoints', { value: 5 });
+Object.defineProperty(navigator, 'appName', { value: "NetScape" });
+Object.defineProperty(navigator, 'appVersion', { value: "5.0 (iPhone; CPU iPhone OS 16_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.1 Mobile/15E148 Safari/604.1" });
 
 window.chrome = undefined
 window.Android = undefined
