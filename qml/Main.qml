@@ -19,17 +19,18 @@ MainView {
     Page {
         anchors.fill: parent
 
+
         WebView {
             id: webView
             anchors.fill: parent
             property string defaultUserAgent: "Mozilla/5.0 (Linux; Ubuntu 16.04 like Android 9) AppleWebKit/537.36 Chrome/87.0.4280.144 Mobile Safari/537.36"
-            property string nowUserAgent: "Mozilla/5.0 (iPhone; CPU iPhone OS 15_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.6, 2 Mobile/15E148 Safari/604.1"
+            property string nowUserAgent: "Mozilla/5.0 (iPhone; CPU iPhone OS 16_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.1 Mobile/15E148 Safari/604.1"
 
-            url: "https://beta.play.geforcenow.com/mall"
+            url: "https://beta.play.geforcenow.com/"
 
             context: WebContext {
                 id: webContext
-                userAgent: webView.nowUserAgent
+                userAgent: "Mozilla/5.0 (iPhone; CPU iPhone OS 16_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.1 Mobile/15E148 Safari/604.1"
                 userScripts: [
                     WebEngineScript {
                         injectionPoint: WebEngineScript.DocumentCreation
@@ -44,27 +45,14 @@ MainView {
             settings.allowRunningInsecureContent: true
 
             onNavigationRequested: {
-                if (request.url == "https://beta.play.geforcenow.com")
-                {
-                    request.action = WebEngineNavigationRequest.AcceptRequest
-                }
-//                    webContext.userAgent = nowUserAgent
-//                else
-//                    webContext.userAgent = defaultUserAgent
-
-                console.log("Requested " + request.url)
-                console.log(webContext.httpUserAgent)
+                request.action = WebEngineNavigationRequest.AcceptRequest
             }
 
             onNewViewRequested: {
-                request.action = WebEngineNavigationRequest.IgnoreRequest
+                request.action = WebEngineNavigationRequest.AcceptRequest
                 if(request.userInitiated) {
                     Qt.openUrlExternally(request.requestedUrl)
                 }
-            }
-            onFeaturePermissionRequested: {
-                console.log("Allowing feature" + request.feature)
-                grantFeaturePermission(request.url, request.feature, true)
             }
 
             onFullScreenRequested : function (request) {
